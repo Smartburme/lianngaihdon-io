@@ -1,6 +1,10 @@
-/project-folder  
-│-- index.html  
-│-- assets/  
-│   ├── styles.scss  
-│   ├── styles.css (Compiled from SCSS)  
-│   ├── script.js
+/your-project-folder
+│── /assets
+│   │── /css
+│   │   ├── styles.css       (Custom CSS)
+│   │── /js
+│   │   ├── script.js        (Custom JavaScript)
+│── /images                 (Images & Icons)
+│── index.html               (Main HTML file)
+│── about.html               (Other pages)
+│── contact.html             (Other pages)
