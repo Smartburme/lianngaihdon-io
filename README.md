@@ -1,20 +1,3 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lian Dgaih Don</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Lian Dgaih Don</h1>
-    </header>
-    <main>
-        <section class="server-info">
-            <h2>Welcome to the Server</h2>
-            <p>This is a sample server-based website design.</p>
-        </section>
-    </main>
-    <script src="script.js"></script>
-</body>
-</html>
+# 
+
+A Pen created on CodePen.io. Original URL:(Lian Ngain Don )[https://github.com/my-c-om/lianngaihdon-io/index.html]
