@@ -1,41 +1,55 @@
-/* 🌹 Background Color (Rose Color) */
-body {
-    background: linear-gradient(to bottom, #FF007F, #FF66A3); /* Rose Color Gradient */
-    animation: snowfall 10s linear infinite; /* Snowfall Effect */
-    overflow-x: hidden;
-}
+document.addEventListener("DOMContentLoaded", function () {
 
-/* 🌨️ Snowfall Effect */
-@keyframes snowfall {
-    from { background-position: 0 0; }
-    to { background-position: 100px 1000px; }
-}
+    // 🌨️ Snowfall Effect (for All Pages)
+    function createSnowflake() {
+        let snowflake = document.createElement("div");
+        snowflake.classList.add("snowflake");
+        snowflake.style.left = Math.random() * 100 + "vw";
+        snowflake.style.animationDuration = (Math.random() * 3 + 2) + "s"; // 2s - 5s animation
+        document.body.appendChild(snowflake);
 
-/* 🎨 Text Gradient Color (Purple, Pink, Blue) */
-h1, h2, h3, p {
-    background: linear-gradient(90deg, #8A2BE2, #FF69B4, #1E90FF);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: textColor 5s infinite alternate ease-in-out;
-}
+        setTimeout(() => { snowflake.remove(); }, 5000); // Remove after 5s
+    }
 
-@keyframes textColor {
-    0% { background-position: left; }
-    100% { background-position: right; }
-}
+    setInterval(createSnowflake, 300);
 
-/* 🌸 Falling Cherry Blossoms for Head Title */
-@keyframes cherryFall {
-    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-}
+    // 🎆 Firefly Effect (iPhone Release Fireworks)
+    function createFirefly() {
+        let firefly = document.createElement("div");
+        firefly.classList.add("firefly");
+        firefly.style.left = Math.random() * 100 + "vw";
+        firefly.style.animationDuration = (Math.random() * 0.5 + 1) + "s";
+        document.body.appendChild(firefly);
 
-.cherry-blossom {
-    position: absolute;
-    top: -10px;
-    width: 20px;
-    height: 20px;
-    background: url('../images/cherry-blossom.png') no-repeat center;
-    background-size: contain;
-    animation: cherryFall 8s linear infinite;
-}
+        setTimeout(() => { firefly.remove(); }, 1000); // Remove after 1s
+    }
+
+    setInterval(createFirefly, 200);
+
+    // 🌸 Falling Cherry Blossoms for Title
+    function createCherryBlossom() {
+        let blossom = document.createElement("div");
+        blossom.classList.add("cherry-blossom");
+        blossom.style.left = Math.random() * 100 + "vw";
+        blossom.style.animationDuration = (Math.random() * 5 + 5) + "s";
+        document.body.appendChild(blossom);
+
+        setTimeout(() => { blossom.remove(); }, 10000);
+    }
+
+    setInterval(createCherryBlossom, 1000);
+
+    // 🎨 Gradient Text Animation (Purple → Pink → Blue)
+    function animateTextColors() {
+        const textElements = document.querySelectorAll("h1, h2, h3, p");
+
+        textElements.forEach((element) => {
+            element.style.background = "linear-gradient(90deg, #8A2BE2, #FF69B4, #1E90FF)";
+            element.style.webkitBackgroundClip = "text";
+            element.style.color = "transparent";
+            element.style.animation = "textColor 5s infinite alternate ease-in-out";
+        });
+    }
+
+    animateTextColors();
+});
