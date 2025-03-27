@@ -9,14 +9,12 @@ body {
 }
 
 /* 🌟 Hero Section Styling */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
+.hero-section {
     background: transparent;
+    padding: 80px 20px;
 }
 
-/* 🎨 Gradient Text Animation */
-.gradient-text {
+h1.gradient-text {
     font-size: 2.5rem;
     font-weight: bold;
     background: linear-gradient(90deg, #8A2BE2, #FF69B4, #1E90FF);
@@ -32,18 +30,18 @@ body {
 }
 
 /* 📌 Button Styling */
-.btn-light {
+.btn-light, .btn-primary {
     color: #FF007F;
     border: 2px solid #FF007F;
     transition: all 0.3s ease-in-out;
 }
 
-.btn-light:hover {
+.btn-light:hover, .btn-primary:hover {
     background: #FF007F;
     color: white;
 }
 
-/* 🌨️ Snowflake Effect */
+/* Snowflake Effect */
 .snow-container {
     position: fixed;
     top: 0;
@@ -67,4 +65,29 @@ body {
 @keyframes snowfall {
     0% { transform: translateY(0px); opacity: 1; }
     100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Firefly Animation */
+.firefly-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.firefly {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 0, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 1);
+    animation: fireflyMove 1s ease-out;
+}
+
+@keyframes fireflyMove {
+    0% { transform: scale(0.5) translateY(0px); opacity: 1; }
+    100% { transform: scale(1.5) translateY(-100px); opacity: 0; }
 }
