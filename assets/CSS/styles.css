@@ -1,45 +1,41 @@
-/* General Styles */
+/* 🌹 Background Color (Rose Color) */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+    background: linear-gradient(to bottom, #FF007F, #FF66A3); /* Rose Color Gradient */
+    animation: snowfall 10s linear infinite; /* Snowfall Effect */
+    overflow-x: hidden;
 }
 
-/* Navbar */
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+/* 🌨️ Snowfall Effect */
+@keyframes snowfall {
+    from { background-position: 0 0; }
+    to { background-position: 100px 1000px; }
 }
 
-/* Hero Section */
-header {
-    background: linear-gradient(to right, #007bff, #0056b3);
-    color: white;
-    padding: 80px 20px;
+/* 🎨 Text Gradient Color (Purple, Pink, Blue) */
+h1, h2, h3, p {
+    background: linear-gradient(90deg, #8A2BE2, #FF69B4, #1E90FF);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textColor 5s infinite alternate ease-in-out;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+@keyframes textColor {
+    0% { background-position: left; }
+    100% { background-position: right; }
 }
 
-header p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+/* 🌸 Falling Cherry Blossoms for Head Title */
+@keyframes cherryFall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
 }
 
-/* Main Content */
-.card {
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* Footer */
-footer {
-    background-color: #343a40;
-    padding: 15px;
-    font-size: 0.9rem;
+.cherry-blossom {
+    position: absolute;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background: url('../images/cherry-blossom.png') no-repeat center;
+    background-size: contain;
+    animation: cherryFall 8s linear infinite;
 }
