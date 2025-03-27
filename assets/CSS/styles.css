@@ -1,55 +1,83 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* 🌹 Background (Same for All Pages) */
+body {
+    background: linear-gradient(to bottom, #FF007F, #FF66A3); /* Rose Color Gradient */
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
 
-    // 🌨️ Snowfall Effect (for All Pages)
-    function createSnowflake() {
-        let snowflake = document.createElement("div");
-        snowflake.classList.add("snowflake");
-        snowflake.style.left = Math.random() * 100 + "vw";
-        snowflake.style.animationDuration = (Math.random() * 3 + 2) + "s"; // 2s - 5s animation
-        document.body.appendChild(snowflake);
+/* 🌨️ Snowflake Animation */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snowfall linear infinite;
+}
 
-        setTimeout(() => { snowflake.remove(); }, 5000); // Remove after 5s
-    }
+@keyframes snowfall {
+    0% { transform: translateY(0px); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
 
-    setInterval(createSnowflake, 300);
+/* 🎆 Firefly Animation */
+.firefly {
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 0, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 1);
+    animation: fireflyMove 1s ease-out;
+}
 
-    // 🎆 Firefly Effect (iPhone Release Fireworks)
-    function createFirefly() {
-        let firefly = document.createElement("div");
-        firefly.classList.add("firefly");
-        firefly.style.left = Math.random() * 100 + "vw";
-        firefly.style.animationDuration = (Math.random() * 0.5 + 1) + "s";
-        document.body.appendChild(firefly);
+@keyframes fireflyMove {
+    0% { transform: scale(0.5) translateY(0px); opacity: 1; }
+    100% { transform: scale(1.5) translateY(-100px); opacity: 0; }
+}
 
-        setTimeout(() => { firefly.remove(); }, 1000); // Remove after 1s
-    }
+/* 🌸 Falling Cherry Blossoms */
+.cherry-blossom {
+    position: absolute;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background: url('../images/cherry-blossom.png') no-repeat center;
+    background-size: contain;
+    animation: cherryFall 8s linear infinite;
+}
 
-    setInterval(createFirefly, 200);
+@keyframes cherryFall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
 
-    // 🌸 Falling Cherry Blossoms for Title
-    function createCherryBlossom() {
-        let blossom = document.createElement("div");
-        blossom.classList.add("cherry-blossom");
-        blossom.style.left = Math.random() * 100 + "vw";
-        blossom.style.animationDuration = (Math.random() * 5 + 5) + "s";
-        document.body.appendChild(blossom);
+/* 🎨 Gradient Text Animation */
+h1, h2, h3, p {
+    background: linear-gradient(90deg, #8A2BE2, #FF69B4, #1E90FF);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 300% 300%;
+    animation: textColor 5s infinite alternate ease-in-out;
+}
 
-        setTimeout(() => { blossom.remove(); }, 10000);
-    }
+@keyframes textColor {
+    0% { background-position: left; }
+    100% { background-position: right; }
+}
 
-    setInterval(createCherryBlossom, 1000);
+/* 📌 Button Styling */
+.btn-light {
+    color: #FF007F;
+    border: 2px solid #FF007F;
+    transition: all 0.3s ease-in-out;
+}
 
-    // 🎨 Gradient Text Animation (Purple → Pink → Blue)
-    function animateTextColors() {
-        const textElements = document.querySelectorAll("h1, h2, h3, p");
-
-        textElements.forEach((element) => {
-            element.style.background = "linear-gradient(90deg, #8A2BE2, #FF69B4, #1E90FF)";
-            element.style.webkitBackgroundClip = "text";
-            element.style.color = "transparent";
-            element.style.animation = "textColor 5s infinite alternate ease-in-out";
-        });
-    }
-
-    animateTextColors();
-});
+.btn-light:hover {
+    background: #FF007F;
+    color: white;
+        }
