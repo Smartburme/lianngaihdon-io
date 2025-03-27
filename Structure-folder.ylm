@@ -1,0 +1,6 @@
+/project-folder  
+│-- index.html  
+│-- assets/  
+│   ├── styles.scss  
+│   ├── styles.css (Compiled from SCSS)  
+│   ├── script.js
