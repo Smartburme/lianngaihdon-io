@@ -1,58 +1,27 @@
-// Console Log for Testing
-console.log("Lian Ngain Don Website Loaded!");
-
-// Smooth Scroll Effect for Navbar Links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 50,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Button Click Alert
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("registrationForm");
+    // 🎆 Firefly Effect (iPhone Release Fireworks)
+    function createFirefly() {
+        let firefly = document.createElement("div");
+        firefly.classList.add("firefly");
+        firefly.style.left = Math.random() * 100 + "vw";
+        firefly.style.animationDuration = (Math.random() * 0.5 + 1) + "s";
+        document.body.appendChild(firefly);
 
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
+        setTimeout(() => { firefly.remove(); }, 1000); // Remove after 1s
+    }
 
-        // Get form values
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+    setInterval(createFirefly, 200);
 
-        // Validate input (Basic)
-        if (name === "" || email === "" || password === "") {
-            alert("Please fill out all fields!");
-            return;
-        }
+    // 🌸 Falling Cherry Blossoms for Title
+    function createCherryBlossom() {
+        let blossom = document.createElement("div");
+        blossom.classList.add("cherry-blossom");
+        blossom.style.left = Math.random() * 100 + "vw";
+        blossom.style.animationDuration = (Math.random() * 5 + 5) + "s";
+        document.body.appendChild(blossom);
 
-        // Display user data (For Testing)
-        console.log("User Registered:");
-        console.log("Name:", name);
-        console.log("Email:", email);
+        setTimeout(() => { blossom.remove(); }, 10000);
+    }
 
-        // Success Message
-        alert("Registration Successful!");
-
-        // Redirect to Home Page (Optional)
-        window.location.href = "index.html";
-    });
-});
-
-// Card Hover Animation Effect
-document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.boxShadow = "0px 10px 20px rgba(0, 0, 0, 0.2)";
-    });
-    card.addEventListener('mouseleave', () => {
-        card.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.1)";
-    });
+    setInterval(createCherryBlossom, 1000);
 });
