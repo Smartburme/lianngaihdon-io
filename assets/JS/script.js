@@ -32,3 +32,34 @@ document.querySelectorAll('.card').forEach(card => {
         card.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.1)";
     });
 });
+
+// registration form 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("registrationForm");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Validate input (Basic)
+        if (name === "" || email === "" || password === "") {
+            alert("Please fill out all fields!");
+            return;
+        }
+
+        // Display user data (For Testing)
+        console.log("User Registered:");
+        console.log("Name:", name);
+        console.log("Email:", email);
+
+        // Success Message
+        alert("Registration Successful!");
+
+        // Redirect to Home Page (Optional)
+        window.location.href = "index.html";
+    });
+});
