@@ -17,23 +17,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // Button Click Alert
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', () => {
-        alert("Button Clicked! Feature Coming Soon 🚀");
-    });
-});
-
-// Card Hover Animation Effect
-document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.boxShadow = "0px 10px 20px rgba(0, 0, 0, 0.2)";
-    });
-    card.addEventListener('mouseleave', () => {
-        card.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.1)";
-    });
-});
-
-// registration form 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("registrationForm");
 
@@ -61,5 +44,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Redirect to Home Page (Optional)
         window.location.href = "index.html";
+    });
+});
+
+// Card Hover Animation Effect
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = "0px 10px 20px rgba(0, 0, 0, 0.2)";
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.1)";
     });
 });
