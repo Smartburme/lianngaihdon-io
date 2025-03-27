@@ -1,1 +1,1 @@
-sass assets/styles.scss assets/styles.css
+sass assets/styles.css
