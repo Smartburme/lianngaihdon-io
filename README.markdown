@@ -15,6 +15,6 @@
             <p>This is a sample server-based website design.</p>
         </section>
     </main>
-    <script src="assets/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
