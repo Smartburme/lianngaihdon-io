@@ -1,9 +1,15 @@
-/* 🌹 Background (Same for All Pages) */
+/* 🌹 Background (Ensuring It Works on All Pages) */
 body {
     background: linear-gradient(to bottom, #FF007F, #FF66A3); /* Rose Color Gradient */
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
+}
+
+/* ✅ Fix: Ensure Background Works Specifically for `index.html` */
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
 /* 🌨️ Snowflake Animation */
@@ -80,4 +86,4 @@ h1, h2, h3, p {
 .btn-light:hover {
     background: #FF007F;
     color: white;
-        }
+}
