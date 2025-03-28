@@ -1,23 +1,65 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const snowContainer = document.querySelector(".snow-container");
-    const fireflyContainer = document.querySelector(".firefly-container");
+/* Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    background: pink; /* ပန်းရောင် */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
 
-    // Create Snowflakes
-    for (let i = 0; i < 50; i++) {
-        let snowflake = document.createElement("div");
-        snowflake.classList.add("snowflake");
-        snowflake.style.left = `${Math.random() * 100}vw`;
-        snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-        snowContainer.appendChild(snowflake);
-    }
+/* Raining Effect */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('rain.png');
+    opacity: 0.2;
+    animation: rainEffect 1s linear infinite;
+}
 
-    // Create Fireflies (iPhone-style lighting)
-    for (let i = 0; i < 10; i++) {
-        let firefly = document.createElement("div");
-        firefly.classList.add("firefly");
-        firefly.style.left = `${Math.random() * 100}vw`;
-        firefly.style.top = `${Math.random() * 100}vh`;
-        firefly.style.animationDuration = `${Math.random() * 2 + 1}s`;
-        fireflyContainer.appendChild(firefly);
-    }
-});
+/* Rain Animation */
+@keyframes rainEffect {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
+}
+
+/* Heading Styling with Nero Gradient */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    background: linear-gradient(to right, black, gray);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Menu Styling */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: lightgray;
+}
+
+/* Textbox Styling */
+.textbox {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #333;
+    border-radius: 10px;
+    color: white;
+}
